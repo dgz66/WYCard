@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网约车查询服务</title>
+</head>
+
+<body>
+  <div class="bj">
+    <div class="zj">
+      <div class="sj">2026-01-15 00:58:15</div>
+      <div class="cp"><span>酥AAAAAA</span></div>
+      <div class="jt"></div>
+      <div class="xx">
+        <div class="s">
+          <div class="sz">
+            <div class="szs">
+              <div class="szss">车牌号</div>
+              <div class="szsx">酥AAAAAA</div>
+            </div>
+            <div class="szs">
+              <div class="szss">车牌颜色</div>
+              <div class="szsx">绿</div>
+            </div>
+          </div>
+          <div class="sy"></div>
+        </div>
+        <div class="x">
+          <div class="szs">
+            <div class="szss">经营范围</div>
+            <div class="szsx">网络预约出租汽车客运</div>
+          </div>
+          <div class="szs">
+            <div class="szss">证件状态</div>
+            <div class="szsx" style="color: #00a650;">有效</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  // 获取时间显示的元素
+  const timeElement = document.querySelector('.sj');
+
+  // 定义一个函数，用于获取当前时间并格式化
+  function updateTime() {
+    const now = new Date(); // 获取当前时间
+    const year = now.getFullYear(); // 获取年份
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // 获取月份（补零）
+    const day = String(now.getDate()).padStart(2, '0'); // 获取日期（补零）
+    const hours = String(now.getHours()).padStart(2, '0'); // 获取小时（补零）
+    const minutes = String(now.getMinutes()).padStart(2, '0'); // 获取分钟（补零）
+    const seconds = String(now.getSeconds()).padStart(2, '0'); // 获取秒（补零）
+
+    // 格式化时间为 YYYY-MM-DD HH:mm:ss
+    const formattedTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+    // 将格式化的时间设置到页面中
+    timeElement.textContent = formattedTime;
+  }
+
+  // 每秒更新一次时间
+  setInterval(updateTime, 1000);
+
+  // 初始化时间（立即显示当前时间，而不是等一秒后才开始）
+  updateTime();
+</script>
+<style>
+  * {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    --status-bar-height: 0px;
+    --top-window-height: 0px;
+    --window-left: 0px;
+    --window-right: 0px;
+    --window-margin: 0px;
+    --tab-bar-height: 0px;
+    --window-top: calc(0px + env(safe-area-inset-top));
+    --window-bottom: calc(0px + env(safe-area-inset-bottom));
+  }
+
+  .bj {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://psp.jsmot.com:8872/psp-tmis-net-taxi-mobile/assets/bg-blue-f940da35.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .zj {
+    background: transparent;
+    padding: 20px;
+    color: #fff;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    font-size: .875rem;
+    box-sizing: border-box;
+  }
+
+  .sj {
+    flex: 0;
+    text-align: center;
+    font-size: 1.3125rem;
+    color: #fff;
+    margin-top: 12%;
+    padding: .3125rem;
+  }
+
+  .cp {
+    background-image: url(https://psp.jsmot.com:8872/psp-tmis-net-taxi-mobile/assets/netQuery_6-2d63d164.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    color: #fff;
+    border-radius: 8px;
+    padding: 15px 30px;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+    position: relative;
+    z-index: 2;
+    width: 230px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .cp span {
+    color: #000;
+    font-size: 28px;
+    font-weight: 700;
+    font-stretch: normal;
+    letter-spacing: 0px;
+  }
+
+  .jt {
+    background-image: url(data:image/png;base64,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);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 24px !important;
+    display: block;
+  }
+
+  .xx {
+    flex: 0;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    color: #333;
+    width: 100%;
+    border: solid 2px #1378eb;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .s {
+    display: flex;
+    font-size: .875rem;
+    box-sizing: border-box;
+    color: #333;
+  }
+
+  .sz {
+    flex: 1;
+    padding-right: 5px;
+    font-size: .875rem;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .sy {
+    height: calc(100% - 5px);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: .875rem;
+    box-sizing: border-box;
+    background-image: url(https://pics0.baidu.com/feed/5fdf8db1cb13495431aca0b307c10856d3094ad0.jpeg?token=8899616f9991d88dce5988f9b59fccba);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 5px;
+  }
+
+  .szs {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ebf6ff;
+    border-radius: 5px;
+    height: 3.4375rem;
+    font-size: .875rem;
+    box-sizing: border-box;
+  }
+
+  .szss {
+    font-size: 11px;
+    color: #0041c2;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-weight: 600;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .szsx {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    display: block;
+    margin-top: -18px;
+  }
+</style>
+
+</html>
